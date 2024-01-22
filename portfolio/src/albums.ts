@@ -1,21 +1,28 @@
+import { StaticImageData } from "next/image"
+import americanDream from "../public/americanDream.jpeg"
+
 export interface Album {
     name: string,
-    cover: string
+    cover: StaticImageData,
+    url: string
 }
 
 export const myAlbums: Album[] = [
     {
         name: "Experience",
-        cover: ""
+        cover: americanDream,
+        url: "lol.html"
     },
 
     {
         name: "Projects",
-        cover: ""
+        cover: americanDream,
+        url: "lol.html"
     },
 
     {
         name: "Contact",
-        cover: ""
+        cover: americanDream,
+        url: "lol.html"
     }
 ]
