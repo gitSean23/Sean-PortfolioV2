@@ -11,18 +11,18 @@ export const myAlbums: Album[] = [
     {
         name: "Experience",
         cover: americanDream,
-        url: "lol.html"
+        url: "experience"
     },
 
     {
         name: "Projects",
         cover: americanDream,
-        url: "lol.html"
+        url: "projects"
     },
 
     {
         name: "Contact",
         cover: americanDream,
-        url: "lol.html"
+        url: "contact"
     }
 ]

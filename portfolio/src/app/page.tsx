@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { myAlbums } from "@/albums";
 import Image from "next/image";
-import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
@@ -23,17 +22,11 @@ export default function Home() {
       <br></br>
       <br></br>
       <br></br>
-      <h1 className="mx-2 text-4xl">Work</h1>
-      <div className="flex flex-wrap mx-2 gap-20 p-4">
+      <h1 className="mx-10 text-4xl">Work</h1>
+      <div className="flex flex-wrap mx-2 gap-20 p-9">
         {myAlbums.map((data, key) => (
           <Link key={key} href={data.url}>
-            <Image
-              alt="yo"
-              src={data.cover}
-              placeholder="blur"
-              //style={{ objectFit: "contain" }}
-              // onClick={}
-            ></Image>
+            <Image alt="yo" src={data.cover} placeholder="blur"></Image>
             <p className="relative top-3">{data.name}</p>
           </Link>
         ))}
