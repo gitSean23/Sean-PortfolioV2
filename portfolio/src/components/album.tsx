@@ -42,54 +42,10 @@ export function Album() {
           </Button>
         </div>
         <div className="grid gap-4">
-          <div className="flex items-center gap-4 text-white">
-            <div className="text-sm font-medium w-4">1.</div>
-            <div className="grid gap-1">
-              <h3 className="font-bold leading-none">Email</h3>
-              <p className="text-sm font-medium leading-none">Sean Feldman</p>
-            </div>
-            <div className="ml-auto w-8 text-right">
-              <Button aria-label="Play" size="icon" variant="ghost">
-                <PlayIcon className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 text-white">
-            <div className="text-sm font-medium w-4">2.</div>
-            <div className="grid gap-1">
-              <h3 className="font-bold leading-none">LinkedIn</h3>
-              <p className="text-sm font-medium leading-none">Sean Feldman</p>
-            </div>
-            <div className="ml-auto w-8 text-right">
-              <Button aria-label="Play" size="icon" variant="ghost">
-                <PlayIcon className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 text-white">
-            <div className="text-sm font-medium w-4">3.</div>
-            <div className="grid gap-1">
-              <h3 className="font-bold leading-none">GitHub</h3>
-              <p className="text-sm font-medium leading-none">Sean Feldman</p>
-            </div>
-            <div className="ml-auto w-8 text-right">
-              <Button aria-label="Play" size="icon" variant="ghost">
-                <PlayIcon className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 text-white">
-            <div className="text-sm font-medium w-4">4.</div>
-            <div className="grid gap-1">
-              <h3 className="font-bold leading-none">Resume</h3>
-              <p className="text-sm font-medium leading-none">Sean Feldman</p>
-            </div>
-            <div className="ml-auto w-8 text-right">
-              <Button aria-label="Play" size="icon" variant="ghost">
-                <PlayIcon className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
+          <Song index="1." song="Email" artist="Sean Feldman" />
+          <Song index="2." song="LinkedIn" artist="Sean Feldman" />
+          <Song index="3." song="GitHub" artist="Sean Feldman" />
+          <Song index="4." song="Resume" artist="Sean Feldman" />
         </div>
       </div>
     </div>
@@ -171,5 +127,22 @@ function MoreHorizontalIcon(props) {
       <circle cx="19" cy="12" r="1" />
       <circle cx="5" cy="12" r="1" />
     </svg>
+  );
+}
+
+function Song(props) {
+  return (
+    <div className="flex items-center gap-4 text-white">
+      <div className="text-sm font-medium w-4">{props.index}</div>
+      <div className="grid gap-1">
+        <h3 className="font-bold leading-none">{props.song}</h3>
+        <p className="text-sm font-medium leading-none">{props.artist}</p>
+      </div>
+      <div className="ml-auto w-8 text-right">
+        <Button aria-label="Play" size="icon" variant="ghost">
+          <PlayIcon className="w-4 h-4" />
+        </Button>
+      </div>
+    </div>
   );
 }

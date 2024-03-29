@@ -4,7 +4,6 @@
  */
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { buttonVariants } from "@/components/ui/button";
 
 import { AvatarImage, Avatar } from "@/components/ui/avatar";
 import Link from "next/link";
@@ -93,59 +92,10 @@ export function Home() {
           </div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-6 pb-4 md:pb-10">
-          <div className="group flex flex-col rounded-lg overflow-hidden shadow-sm">
-            <Link href={"https://github.com/gitSean23?tab=repositories"}>
-              <Image
-                alt="Experience"
-                height={300}
-                src="/placeholder.svg"
-                style={{ aspectRatio: "300/300", objectFit: "cover" }}
-                width={300}
-              />
-
-              <div className="p-4">
-                <h3 className="font-bold leading-none">Experience</h3>
-              </div>
-            </Link>
-          </div>
-          <div className="group flex flex-col rounded-lg overflow-hidden shadow-sm">
-            <Image
-              alt="Projects"
-              height={300}
-              src="/placeholder.svg"
-              style={{ aspectRatio: "300/300", objectFit: "cover" }}
-              width={300}
-            />
-            <div className="p-4">
-              <h3 className="font-bold leading-none">Projects</h3>
-            </div>
-          </div>
-          <div className="group flex flex-col rounded-lg overflow-hidden shadow-sm">
-            <Link href={"contact"}>
-              <Image
-                alt="Contact"
-                height={300}
-                src="/placeholder.svg"
-                style={{ aspectRatio: "300/300", objectFit: "cover" }}
-                width={300}
-              />
-              <div className="p-4">
-                <h3 className="font-bold leading-none">Contact</h3>
-              </div>
-            </Link>
-          </div>
-          <div className="group flex flex-col rounded-lg overflow-hidden shadow-sm">
-            <Image
-              alt="About Me"
-              height={300}
-              src="/placeholder.svg"
-              style={{ aspectRatio: "300/300", objectFit: "cover" }}
-              width={300}
-            />
-            <div className="p-4">
-              <h3 className="font-bold leading-none">About Me</h3>
-            </div>
-          </div>
+          <AlbumButton name="Experience" link="experience" />
+          <AlbumButton name="Projects" link="projects" />
+          <AlbumButton name="Contact" link="contact" />
+          <AlbumButton name="About Me" link="contact" />
         </div>
       </div>
     </div>
@@ -270,5 +220,25 @@ function VerifiedIcon(props) {
         d="M22.491,30.69c-0.576,0-1.152-0.22-1.591-0.659c-0.879-0.878-0.879-2.303,0-3.182l9.539-9.539 c0.878-0.879,2.304-0.879,3.182,0c0.879,0.878,0.879,2.303,0,3.182l-9.539,9.539C23.643,30.47,23.067,30.69,22.491,30.69z"
       ></path>
     </svg>
+  );
+}
+
+function AlbumButton(props) {
+  return (
+    <div className="group flex flex-col rounded-lg overflow-hidden shadow-sm">
+      <Link href={props.link}>
+        <Image
+          alt={props.name}
+          height={300}
+          src="/placeholder.svg"
+          style={{ aspectRatio: "300/300", objectFit: "cover" }}
+          width={300}
+        />
+
+        <div className="p-4">
+          <h3 className="font-bold leading-none">{props.name}</h3>
+        </div>
+      </Link>
+    </div>
   );
 }
