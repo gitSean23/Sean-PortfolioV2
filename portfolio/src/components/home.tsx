@@ -5,7 +5,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-import { AvatarImage, Avatar } from "@/components/ui/avatar";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -36,39 +35,9 @@ export function Home() {
         <div className="mt-6">
           <h2 className="text-2xl font-bold">Popular</h2>
           <div className="mt-4 space-y-2">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-3">
-                <span className="text-white">1</span>
-                <MusicIcon className="text-green-500" />
-                <span className="text-white">Project Showcase</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <span className="text-gray-400">123,456,789</span>
-                <span className="text-gray-400">3:20</span>
-              </div>
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-3">
-                <span className="text-white">2</span>
-                <MusicIcon className="text-green-500" />
-                <span className="text-white">Summer Vibes</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <span className="text-gray-400">109,876,543</span>
-                <span className="text-gray-400">2:45</span>
-              </div>
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-3">
-                <span className="text-white">3</span>
-                <MusicIcon className="text-green-500" />
-                <span className="text-white">City Lights</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <span className="text-gray-400">98,765,432</span>
-                <span className="text-gray-400">4:20</span>
-              </div>
-            </div>
+            <PopularButton index="1" name="Neon" />
+            <PopularButton index="2" name="KAOS" />
+            <PopularButton index="3" name="NASA" />
           </div>
         </div>
       </div>
@@ -239,6 +208,22 @@ function AlbumButton(props) {
           <h3 className="font-bold leading-none">{props.name}</h3>
         </div>
       </Link>
+    </div>
+  );
+}
+
+function PopularButton(props) {
+  return (
+    <div className="flex justify-between items-center">
+      <div className="flex items-center space-x-3">
+        <span className="text-white">{props.index}</span>
+        <MusicIcon className="text-green-500" />
+        <span className="text-white">{props.name}</span>
+      </div>
+      <div className="flex items-center space-x-4">
+        <span className="text-gray-400">123,456,789</span>
+        <span className="text-gray-400">3:20</span>
+      </div>
     </div>
   );
 }
