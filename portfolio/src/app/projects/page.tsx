@@ -1,7 +1,9 @@
+import { Home } from "../../components/home";
+
 export default function Projects() {
   return (
-    <div>
-      <h1>Projects</h1>
+    <div className="overflow-hidden">
+      <Home />
     </div>
   );
 }

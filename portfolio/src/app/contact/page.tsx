@@ -1,7 +1,9 @@
+import { Album } from "@/components/album";
+
 export default function Contact() {
   return (
     <div>
-      <h1>Contact</h1>
+      <Album />
     </div>
   );
 }

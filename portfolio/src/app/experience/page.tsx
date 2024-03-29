@@ -1,6 +1,7 @@
 import { myAlbums } from "@/albums";
 import Image from "next/image";
 import Link from "next/link";
+import { AlbumData, experienceAlbum } from "@/albumData";
 
 export default function Experience() {
   return (
@@ -30,7 +31,20 @@ export default function Experience() {
           <Link href="https://github.com/gitSean23?tab=repositories">
             Wear-Lab
           </Link>
-          <p className=" relative left-9">Software Engineer</p>
+          <p className=" relative left-9">Undergraduate Research Assistant</p>
+        </div>
+        <div>
+          {experienceAlbum.map((data, key) => (
+            <div key={key} className="inline-flex gap-80 items-center">
+              <Link key={key} href={data.link}>
+                {data.name}
+              </Link>
+              <p>{data.desc}</p>
+              <br></br>
+              <br></br>
+              <br></br>
+            </div>
+          ))}
         </div>
       </div>
     </div>

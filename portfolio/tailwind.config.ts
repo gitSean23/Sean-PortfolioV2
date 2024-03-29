@@ -16,7 +16,31 @@ const config = {
       screens: {
         "2xl": "1400px",
       },
+
     },
+    borderWidth: {
+      DEFAULT: '1px',
+    '0': '0',
+    '2': '2px',
+    '3': '3px',
+    '4': '4px',
+    '6': '6px',
+    '8': '8px',
+    '10': '10px',
+    '12': '12px',
+    '14': '14px',
+    '20': '20px'
+    },
+
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      '50%': '50%',
+      '16': '4rem',
+      '500': '500px'
+    },
+
     extend: {
       colors: {
         border: "hsl(var(--border))",
