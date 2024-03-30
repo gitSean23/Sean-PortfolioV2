@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 
 import Link from "next/link";
 import Image from "next/image";
+import { JSX, SVGProps } from "react";
 
 export function Home() {
   return (
@@ -46,7 +47,7 @@ export function Home() {
           <div className="space-y-2 md:col-span-2">
             <h1 className="text-3xl font-bold">Discography</h1>
             <p className="text-lg text-gray-500 dark:text-gray-400">
-              These are some of the developer's most popular releases.
+              These are some of the developer&apos;s most popular releases.
             </p>
           </div>
           <div className="flex items-start justify-end space-x-4">
@@ -61,17 +62,23 @@ export function Home() {
           </div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-6 pb-4 md:pb-10">
-          <AlbumButton name="Experience" link="experience" />
-          <AlbumButton name="Projects" link="projects" />
-          <AlbumButton name="Contact" link="contact" />
-          <AlbumButton name="About Me" link="contact" />
+          <AlbumButton
+            name="Experience"
+            link="experience"
+            img="/experience.jpg"
+          />
+          <AlbumButton name="Projects" link="projects" img="/project.jpg" />
+          <AlbumButton name="Contact" link="contact" img="/contact.jpg" />
+          <AlbumButton name="About Me" link="about" img="/about.gif" />
         </div>
       </div>
     </div>
   );
 }
 
-function ChevronLeftIcon(props) {
+function ChevronLeftIcon(
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) {
   return (
     <svg
       {...props}
@@ -90,7 +97,9 @@ function ChevronLeftIcon(props) {
   );
 }
 
-function ChevronRightIcon(props) {
+function ChevronRightIcon(
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) {
   return (
     <svg
       {...props}
@@ -109,7 +118,7 @@ function ChevronRightIcon(props) {
   );
 }
 
-function MusicIcon(props) {
+function MusicIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -130,7 +139,7 @@ function MusicIcon(props) {
   );
 }
 
-function HeartIcon(props) {
+function HeartIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -149,7 +158,7 @@ function HeartIcon(props) {
   );
 }
 
-function StarIcon(props) {
+function StarIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -168,7 +177,9 @@ function StarIcon(props) {
   );
 }
 
-function VerifiedIcon(props) {
+function VerifiedIcon(
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) {
   return (
     <svg
       {...props}
@@ -192,14 +203,14 @@ function VerifiedIcon(props) {
   );
 }
 
-function AlbumButton(props) {
+function AlbumButton(props: { link: string; name: string; img: string }) {
   return (
     <div className="group flex flex-col rounded-lg overflow-hidden shadow-sm">
       <Link href={props.link}>
         <Image
           alt={props.name}
           height={300}
-          src="/placeholder.svg"
+          src={props.img}
           style={{ aspectRatio: "300/300", objectFit: "cover" }}
           width={300}
         />
@@ -212,7 +223,7 @@ function AlbumButton(props) {
   );
 }
 
-function PopularButton(props) {
+function PopularButton(props: { index: string; name: string }) {
   return (
     <div className="flex justify-between items-center">
       <div className="flex items-center space-x-3">
