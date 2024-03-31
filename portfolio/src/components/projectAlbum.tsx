@@ -4,23 +4,32 @@
  */
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { JSX, SVGProps } from "react";
+import Link from "next/link";
+import {
+  JSX,
+  JSXElementConstructor,
+  PromiseLikeOfReactNode,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+  SVGProps,
+} from "react";
 
-export function Album() {
+export function ProjectAlbum() {
   return (
     <div key="1" className="bg-[#121212] min-h-screen flex flex-col gap-4 p-4">
       <div className="grid gap-2">
         <div className="flex items-center gap-4">
           <Image
-            alt="Album cover"
+            alt="Project Album cover"
             className="aspect-square rounded-lg overflow-hidden"
             height={200}
-            src="/contact.jpg"
+            src="/project.jpg"
             width={200}
           />
 
           <div className="grid gap-1">
-            <h1 className="text-2xl font-bold leading-none">Contact</h1>
+            <h1 className="text-2xl font-bold leading-none">Projects</h1>
             <h2 className="text-sm font-medium tracking-wide leading-none">
               Sean Feldman
             </h2>
@@ -43,10 +52,13 @@ export function Album() {
           </Button>
         </div>
         <div className="grid gap-4">
-          <Song index="1." song="Email" artist="Sean Feldman" />
-          <Song index="2." song="LinkedIn" artist="Sean Feldman" />
-          <Song index="3." song="GitHub" artist="Sean Feldman" />
-          <Song index="4." song="Resume" artist="Sean Feldman" />
+          <Song
+            index="1."
+            song="NASA"
+            artist="Sean Feldman | Software Engineer Intern"
+          />
+          <Song index="2." song="Knight Hacks" artist="Sean Feldman" />
+          <Song index="3." song="WEAR Lab" artist="Sean Feldman" />
         </div>
       </div>
     </div>
@@ -139,10 +151,12 @@ function Song(props: { index: string; song: string; artist: string }) {
   return (
     <div className="flex items-center gap-4 text-white">
       <div className="text-sm font-medium w-4">{props.index}</div>
-      <div className="grid gap-1">
-        <h3 className="font-bold leading-none">{props.song}</h3>
-        <p className="text-sm font-medium leading-none">{props.artist}</p>
-      </div>
+      <Link href="https://github.com/gitSean23?tab=repositories">
+        <div className="grid gap-1">
+          <h3 className="font-bold leading-none">{props.song}</h3>
+          <p className="text-sm font-medium leading-none">{props.artist}</p>
+        </div>
+      </Link>
       <div className="ml-auto w-8 text-right">
         <Button aria-label="Play" size="icon" variant="ghost">
           <PlayIcon className="w-4 h-4" />

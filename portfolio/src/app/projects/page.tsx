@@ -1,9 +1,8 @@
-import { Home } from "../../components/home";
-
+import { ProjectAlbum } from "@/components/projectAlbum";
 export default function Projects() {
   return (
     <div className="overflow-hidden">
-      <Home />
+      <ProjectAlbum />
     </div>
   );
 }

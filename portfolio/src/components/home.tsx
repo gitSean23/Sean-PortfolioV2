@@ -71,6 +71,21 @@ export function Home() {
           <AlbumButton name="Contact" link="contact" img="/contact.jpg" />
           <AlbumButton name="About Me" link="about" img="/about.gif" />
         </div>
+        <div>
+          <Link
+            className="mx-2"
+            href="https://www.freepik.com/free-vector/gradient-summer-illustration_13803109.htm#query=summer&position=1&from_view=keyword&track=sph&uuid=5f463024-ed87-4bd8-ad8d-4cc278f2570b"
+          >
+            Experience Image by Freepik
+          </Link>
+          <br></br>
+          <Link
+            className="mx-2"
+            href="https://www.freepik.com/free-vector/gradient-summer-illustration_13803109.htm#query=summer&position=1&from_view=keyword&track=sph&uuid=5f463024-ed87-4bd8-ad8d-4cc278f2570b"
+          >
+            Projects Image by Freepik
+          </Link>
+        </div>
       </div>
     </div>
   );
