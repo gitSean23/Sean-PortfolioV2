@@ -52,13 +52,12 @@ export function ProjectAlbum() {
           </Button>
         </div>
         <div className="grid gap-4">
-          <Song
-            index="1."
-            song="NASA"
-            artist="Sean Feldman | Software Engineer Intern"
-          />
-          <Song index="2." song="Knight Hacks" artist="Sean Feldman" />
-          <Song index="3." song="WEAR Lab" artist="Sean Feldman" />
+          <Song index="1." song="Reserv" artist="Sean Feldman" />
+          <Song index="2." song="NEON" artist="Sean Feldman" />
+          <Song index="3" song="AidUI" artist="Sean Feldman"></Song>
+          <Song index="4." song="K.A.O.S" artist="Sean Feldman" />
+          <Song index="5." song="NodeBB" artist="Sean Feldman"></Song>
+          <Song index="6." song="Fin-Financial" artist="Sean Feldman"></Song>
         </div>
       </div>
     </div>
